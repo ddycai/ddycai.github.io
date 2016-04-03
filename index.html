@@ -8,7 +8,7 @@ layout: home
       <div class="eyebrow">{{ post.date | date: "%d %b %Y" }}</div>
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-      <img src="images/{{ post.thumb }}" />
+      <a href="{{ site.baseurl }}{{ post.url }}"><img src="images/{{ post.thumb }}" /></a>
 
       <div class="entry">
       	<p>{{ post.desc }}</p>

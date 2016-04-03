@@ -174,7 +174,7 @@ p {
   font-size: 30px;
   font-weight: 300;
   line-height: 40px;
-  max-width: 310px;
+  max-width: 375px;
   margin-bottom: 60px;
 }
 @media screen and (max-width: 640px) {
