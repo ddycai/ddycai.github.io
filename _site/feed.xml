@@ -1,133 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jekyll-grid</title>
-    <description>A jekyll theme ideal for showcasing projects</description>
+    <title>Duncan Cai</title>
+    <description>Welcome to my portfolio</description>
     <link>http://femmebot.github.io</link>
     <atom:link href="http://femmebot.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Mollis Offendit In Mea</title>
-        <description>&lt;h2 id=&quot;h2-heading-looks-like-this&quot;&gt;H2 Heading Looks Like This&lt;/h2&gt;
+        <title>Bin Packing</title>
+        <description>&lt;h2 id=&quot;bin-packing&quot;&gt;Bin Packing&lt;/h2&gt;
 
-&lt;p&gt;Sample paragraph goes here and looks like this. Bacon ipsum dolor sit amet turducken meatloaf boudin pork loin meatball biltong, fatback capicola turkey pork chop. Short ribs boudin landjaeger kevin brisket ground round. &lt;/p&gt;
+&lt;p&gt;This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic &lt;a href=&quot;https://en.wikipedia.org/wiki/Bin_packing_problem&quot;&gt;bin packing problem&lt;/a&gt;, we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-completeness&quot;&gt;NP complete&lt;/a&gt; problems.&lt;/p&gt;
 
-&lt;h3 id=&quot;h3-heading-looks-like-this&quot;&gt;H3 Heading Looks Like This&lt;/h3&gt;
+&lt;p&gt;Instead, there are a set of &lt;a href=&quot;https://en.wikipedia.org/wiki/Approximation_algorithm&quot;&gt;approximation algorithms&lt;/a&gt; that will not find the optimal solution but will find a solution that is close to the optimal solution. In my web application, I explore the performance of two different algorithms named &lt;strong&gt;first fit&lt;/strong&gt; and &lt;strong&gt;first fit descending&lt;/strong&gt; through a simple game.&lt;/p&gt;
 
-&lt;p&gt;Spare ribs strip steak pastrami corned beef bresaola porchetta. Cow fatback tongue prosciutto, short ribs hamburger drumstick beef ribs swine t-bone pancetta meatball strip steak ground round tenderloin.&lt;/p&gt;
+&lt;h3 id=&quot;first-fit&quot;&gt;First Fit&lt;/h3&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Sample ordered list&lt;/li&gt;
-  &lt;li&gt;List item &lt;/li&gt;
-  &lt;li&gt;Another list item&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;The first fit algorithm is the simplest algorithm that one can think of for solving the bin packing problem. For each item, we put it in the first bin that fits. If there are no bins where this item fits, we open a new bin and we put the item there. It can be shown that this algorithm produces a solution that is at most two times the optimal solution. That means if the optimal solution uses X bins then this solution uses at most 2X bins.&lt;/p&gt;
 
-&lt;h4 id=&quot;h4-heading-looks-like-this&quot;&gt;H4 Heading Looks Like This&lt;/h4&gt;
+&lt;h3 id=&quot;first-fit-descending&quot;&gt;First Fit Descending&lt;/h3&gt;
 
-&lt;p&gt;Corned beef pig pancetta drumstick tail, andouille spare ribs jowl prosciutto biltong hamburger short loin pork brisket. Frankfurter kielbasa brisket meatloaf pastrami fatback. Cow t-bone pork chop chuck short ribs spare ribs. Pancetta flank porchetta, turkey tail ball tip tri-tip leberkas beef.&lt;/p&gt;
+&lt;p&gt;The first fit descending algorithm is an improvement upon the first fit algorithm. We first sort our items in decreasing order and then we pack them in the same way that we pack them in first fit. It can be shown that this algorthm produces a solution that is at most one-and-a-half (3/2) times the optimal solution.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;This is a sample blockquote. Landjaeger shoulder ham capicola. 
-Pork shoulder fatback, flank pork belly rump short loin meatloaf filet mignon kevin turducken spare ribs sirloin short ribs ham hock.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;game&quot;&gt;Game&lt;/h2&gt;
+
+&lt;p&gt;In this simple game, the player is a worker in a factory that is presumably in the business of packing boxes. Blue squares representing items of various sizes are generated to the left, with each square containing a number that indicates the weight of each box. The player’s objective is to pack these items into each bin using the least amount of bins. The computer will run first fit and first fit descending described above to solve the problems. The player’s aim is to solve the problem using less bins than the computer.&lt;/p&gt;
+
+&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;The purpose is to show that the approximation algorithms which do not find the exact solution perform quite well in practice. The player may have difficulty beating the computer’s “dumb” approach to solving the problem. It is possible that the computer sometimes finds the optimal solution, in which case there is no way for the player to beat the computer.&lt;/p&gt;
+
+&lt;p&gt;To make the task of beating the computer simpler, the computer will take the worse solution out of first fit and first fit descending. The reason is that although first fit descending seems to be a better algorithm, it sometimes finds a worse solution than first fit in practice. This is also to make it less likely that the computer finds the optimal solution, in which case the user cannot do better.&lt;/p&gt;
+
+&lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
+
+&lt;p&gt;The web application was coded mainly in Javascript. I used the libraries &lt;a href=&quot;https://jqueryui.com/&quot;&gt;jQuery UI&lt;/a&gt; for the drag/drop functionality and &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React.js&lt;/a&gt; for updating the user interface.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 01 Mar 2014 00:00:00 -0500</pubDate>
-        <link>http://femmebot.github.io/Mollis-offendit-in-mea/</link>
-        <guid isPermaLink="true">http://femmebot.github.io/Mollis-offendit-in-mea/</guid>
+        <pubDate>Sun, 03 Apr 2016 00:00:00 -0400</pubDate>
+        <link>http://femmebot.github.io/Bin-Packing/</link>
+        <guid isPermaLink="true">http://femmebot.github.io/Bin-Packing/</guid>
       </item>
     
       <item>
-        <title>Lorem Ipsum Quid Nostrud</title>
-        <description>&lt;h2 id=&quot;h2-heading-looks-like-this&quot;&gt;H2 Heading Looks Like This&lt;/h2&gt;
+        <title>Flood It</title>
+        <description>&lt;h2 id=&quot;flood-it&quot;&gt;Flood It&lt;/h2&gt;
 
-&lt;p&gt;Sample paragraph goes here and looks like this. Bacon ipsum dolor sit amet turducken meatloaf boudin pork loin meatball biltong, fatback capicola turkey pork chop. Short ribs boudin landjaeger kevin brisket ground round. &lt;/p&gt;
+&lt;p&gt;In the game Flood It, there is a grid of coloured squares and the user’s objective is to fill the entire grid with one colour. Each turn, the user can “flood” every cell connected to the top left corner of the grid with a single colour. All cells connected to the top right corner is changed to the designated colour. For two cells to be connected, they must have the same colour and be adjacent vertically or horizontally. The objective of the user is to do flood the entire grid in the least number of turns.&lt;/p&gt;
 
-&lt;h3 id=&quot;h3-heading-looks-like-this&quot;&gt;H3 Heading Looks Like This&lt;/h3&gt;
-
-&lt;p&gt;Spare ribs strip steak pastrami corned beef bresaola porchetta. Cow fatback tongue prosciutto, short ribs hamburger drumstick beef ribs swine t-bone pancetta meatball strip steak ground round tenderloin.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Sample ordered list&lt;/li&gt;
-  &lt;li&gt;List item &lt;/li&gt;
-  &lt;li&gt;Another list item&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;h4-heading-looks-like-this&quot;&gt;H4 Heading Looks Like This&lt;/h4&gt;
-
-&lt;p&gt;Corned beef pig pancetta drumstick tail, andouille spare ribs jowl prosciutto biltong hamburger short loin pork brisket. Frankfurter kielbasa brisket meatloaf pastrami fatback. Cow t-bone pork chop chuck short ribs spare ribs. Pancetta flank porchetta, turkey tail ball tip tri-tip leberkas beef.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a sample blockquote. Landjaeger shoulder ham capicola. 
-Pork shoulder fatback, flank pork belly rump short loin meatloaf filet mignon kevin turducken spare ribs sirloin short ribs ham hock.&lt;/p&gt;
-&lt;/blockquote&gt;
-
+&lt;p&gt;This problem belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; problems meaning it is very difficult to find an exact solution.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 01 Mar 2014 00:00:00 -0500</pubDate>
-        <link>http://femmebot.github.io/Lorem-Ipsum-Dolor/</link>
-        <guid isPermaLink="true">http://femmebot.github.io/Lorem-Ipsum-Dolor/</guid>
+        <pubDate>Fri, 01 Apr 2016 00:00:00 -0400</pubDate>
+        <link>http://femmebot.github.io/Flood-It/</link>
+        <guid isPermaLink="true">http://femmebot.github.io/Flood-It/</guid>
       </item>
     
       <item>
-        <title>Another Project Title</title>
-        <description>&lt;h2 id=&quot;h2-heading-looks-like-this&quot;&gt;H2 Heading Looks Like This&lt;/h2&gt;
+        <title>Transposer</title>
+        <description>&lt;h2 id=&quot;transposer&quot;&gt;Transposer&lt;/h2&gt;
 
-&lt;p&gt;Sample paragraph goes here and looks like this. Bacon ipsum dolor sit amet turducken meatloaf boudin pork loin meatball biltong, fatback capicola turkey pork chop. Short ribs boudin landjaeger kevin brisket ground round. &lt;/p&gt;
+&lt;p&gt;Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back then. Many chord transposer would try to give you a song that is in Bb major as A#. They are the same chord, but A# is almost never seen since it does not make sense.&lt;/p&gt;
 
-&lt;h3 id=&quot;h3-heading-looks-like-this&quot;&gt;H3 Heading Looks Like This&lt;/h3&gt;
-
-&lt;p&gt;Spare ribs strip steak pastrami corned beef bresaola porchetta. Cow fatback tongue prosciutto, short ribs hamburger drumstick beef ribs swine t-bone pancetta meatball strip steak ground round tenderloin.&lt;/p&gt;
+&lt;p&gt;This web application transposes chords and lyrics to any key the user wants. These are its most important features:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Sample ordered list&lt;/li&gt;
-  &lt;li&gt;List item &lt;/li&gt;
-  &lt;li&gt;Another list item&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Chord detection&lt;/strong&gt;: Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text contains chords and which text contains lyrics. It will then transpose only the chords.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Knowledge of key signatures&lt;/strong&gt;: The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;h4-heading-looks-like-this&quot;&gt;H4 Heading Looks Like This&lt;/h4&gt;
+&lt;h3 id=&quot;technology&quot;&gt;Technology&lt;/h3&gt;
 
-&lt;p&gt;Corned beef pig pancetta drumstick tail, andouille spare ribs jowl prosciutto biltong hamburger short loin pork brisket. Frankfurter kielbasa brisket meatloaf pastrami fatback. Cow t-bone pork chop chuck short ribs spare ribs. Pancetta flank porchetta, turkey tail ball tip tri-tip leberkas beef.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a sample blockquote. Landjaeger shoulder ham capicola. 
-Pork shoulder fatback, flank pork belly rump short loin meatloaf filet mignon kevin turducken spare ribs sirloin short ribs ham hock.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the &lt;a href=&quot;http://xregexp.com/&quot;&gt;XRegExp&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_expression&quot;&gt;regular expression&lt;/a&gt; javascript library.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 01 Feb 2014 00:00:00 -0500</pubDate>
-        <link>http://femmebot.github.io/Another-Project-Title/</link>
-        <guid isPermaLink="true">http://femmebot.github.io/Another-Project-Title/</guid>
-      </item>
-    
-      <item>
-        <title>Hello World</title>
-        <description>&lt;h2 id=&quot;h2-heading-looks-like-this&quot;&gt;H2 Heading Looks Like This&lt;/h2&gt;
-
-&lt;p&gt;Sample paragraph goes here and looks like this. Bacon ipsum dolor sit amet turducken meatloaf boudin pork loin meatball biltong, fatback capicola turkey pork chop. Short ribs boudin landjaeger kevin brisket ground round. &lt;/p&gt;
-
-&lt;h3 id=&quot;h3-heading-looks-like-this&quot;&gt;H3 Heading Looks Like This&lt;/h3&gt;
-
-&lt;p&gt;Spare ribs strip steak pastrami corned beef bresaola porchetta. Cow fatback tongue prosciutto, short ribs hamburger drumstick beef ribs swine t-bone pancetta meatball strip steak ground round tenderloin.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Sample ordered list&lt;/li&gt;
-  &lt;li&gt;List item &lt;/li&gt;
-  &lt;li&gt;Another list item&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;h4-heading-looks-like-this&quot;&gt;H4 Heading Looks Like This&lt;/h4&gt;
-
-&lt;p&gt;Corned beef pig pancetta drumstick tail, andouille spare ribs jowl prosciutto biltong hamburger short loin pork brisket. Frankfurter kielbasa brisket meatloaf pastrami fatback. Cow t-bone pork chop chuck short ribs spare ribs. Pancetta flank porchetta, turkey tail ball tip tri-tip leberkas beef.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a sample blockquote. Landjaeger shoulder ham capicola. 
-Pork shoulder fatback, flank pork belly rump short loin meatloaf filet mignon kevin turducken spare ribs sirloin short ribs ham hock.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        <pubDate>Wed, 01 Jan 2014 00:00:00 -0500</pubDate>
-        <link>http://femmebot.github.io/Hello-World/</link>
-        <guid isPermaLink="true">http://femmebot.github.io/Hello-World/</guid>
+        <pubDate>Wed, 02 Apr 2014 00:00:00 -0400</pubDate>
+        <link>http://femmebot.github.io/Transposer/</link>
+        <guid isPermaLink="true">http://femmebot.github.io/Transposer/</guid>
       </item>
     
   </channel>

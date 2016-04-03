@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <title>About – Duncan Cai – Welcome to my portfolio</title>
+    <title>Transposer – Duncan Cai – Welcome to my portfolio</title>
 
     <meta name="author" content="Duncan Cai" />
     <meta name="description" content="Welcome to my portfolio">
@@ -39,25 +39,34 @@
 
 
       <div id="main" role="main" class="container">
-        <article class="page">
-  
-  <h1>About</h1>
+        <article class="post">
+  <h1>Transposer</h1>
+  <a href="https://frigidrain.github.io/transposer" class="large-link" target="_blank">View Project Site <i class="fa fa-external-link"></i></a> 
+  <div class="date">Posted April  2, 2014</div>
+
 
   <div class="entry">
-    <p>Hello, my name is Duncan. I am undergraduate student at the <a href="http://www.uwo.ca/">University of Western Ontario</a> studying computer science and business. I am an aspiring software engineer, and some of my interests in the area of software/computing include</p>
+    <h2 id="transposer">Transposer</h2>
+
+<p>Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back then. Many chord transposer would try to give you a song that is in Bb major as A#. They are the same chord, but A# is almost never seen since it does not make sense.</p>
+
+<p>This web application transposes chords and lyrics to any key the user wants. These are its most important features:</p>
 
 <ol>
-  <li>Clever algorithms: I really like learning about algorithms and being introduced to new types of problems in computer science.</li>
-  <li>Data analytics: I am not a statistician, but I like work involving drawing insights from large amount of data.</li>
+  <li><strong>Chord detection</strong>: Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text contains chords and which text contains lyrics. It will then transpose only the chords.</li>
+  <li><strong>Knowledge of key signatures</strong>: The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#.</li>
 </ol>
 
-<p>Don’t even get me started on using clever algorithms to analyze data!</p>
+<h3 id="technology">Technology</h3>
 
-<p>My preferred “medium” is the web, as you have probably noticed from the projects presented in my portfolio. That being said, I wouldn’t call myself a web developer as I only have experience creating the small Javascipt application you see here. I don’t have any experience creating full-fledged sites. Nevertheless, Javascript is one of my favourite languages, and I love web technologies.</p>
+<p>The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the <a href="http://xregexp.com/">XRegExp</a> <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a> javascript library.</p>
+
 
   </div>
-</article>
 
+
+  
+</article>
       </div>
 
     </div><!-- /content-wrapper -->

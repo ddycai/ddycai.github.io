@@ -4,17 +4,11 @@ title: About
 permalink: /about/
 ---
 
+Hello, my name is Duncan. I am undergraduate student at the [University of Western Ontario](http://www.uwo.ca/) studying computer science and business. I am an aspiring software engineer, and some of my interests in the area of software/computing include
 
+1. Clever algorithms: I really like learning about algorithms and being introduced to new types of problems in computer science.
+2. Data analytics: I am not a statistician, but I like work involving drawing insights from large amount of data.
 
-## Set up instructions
+Don't even get me started on using clever algorithms to analyze data!
 
-Fork this Jekyll-Grid on Github: [https://github.com/femmebot/jekyll-grid](https://github.com/femmebot/jekyll-grid)
-
-Part of the [25x52](http://25x52.com) initiative, this theme is based on [Jekyll Now](https://github.com/barryclark/jekyll-now). Refer to the following original instructions for help with the setup:
-
-> Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below :point_down:).
-
-> ![_config.yml]({{ site.baseurl }}/images/config.png)
-
-> The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
-
+My preferred "medium" is the web, as you have probably noticed from the projects presented in my portfolio. That being said, I wouldn't call myself a web developer as I only have experience creating the small Javascipt application you see here. I don't have any experience creating full-fledged sites. Nevertheless, Javascript is one of my favourite languages, and I love web technologies.
