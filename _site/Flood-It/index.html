@@ -77,7 +77,7 @@
 
 <h4 id="greedy">Greedy</h4>
 
-<p>The greedy algorithm mentioned above to solve Flood It is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this will not always give us the best solution. Consider the following puzzle:</p>
+<p>The greedy algorithm mentioned above to solve Flood It is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this may give us something far from the best solution. Consider the following puzzle:</p>
 
 <table class="image centered">
 
@@ -88,7 +88,7 @@
 <tr><td><img src="https://kunigami.files.wordpress.com/2013/09/flood-it-bad.png" alt="A puzzle for which the greedy algorithm performs badly" /></td></tr>
 </table>
 
-<p>The optimal solution takes three turns, which is the best you can possible get. Flood the board in the following sequence: blue, red, then orange. Notice that the greedy algorithm will choose red first as it increases our territory the most. Then, it will choose orange then red then orange and so on. It will choose blue last. This is much worse than the optimal solution.</p>
+<p>The optimal solution takes three turns, which is the best we can possibly get. The solution is to flood the board in the following sequence: blue, red, then orange. Notice that the greedy algorithm will choose red first as it increases our territory the most. Then, it will choose orange then red then orange and so on. It will choose blue last. This is much worse than the optimal solution.</p>
 
 <p>We are interested to see if it’s easy for a computer to beat a solution produced by the greedy algorithm. Although in some cases it performs poorly, it might be that on average, it gives a good solution.</p>
 
