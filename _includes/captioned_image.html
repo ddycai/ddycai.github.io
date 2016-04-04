@@ -1,0 +1,8 @@
+<table class="image centered">
+{% if include.description %}
+<caption align="bottom">{{ include.description }}
+{% if include.source %}(<a href="{{ include.source }}">source</a>){% endif %}
+</caption>
+{% endif %}
+<tr><td><img src="{% if include.local %}{{ site.baseurl }}/{% endif %}{{ include.url }}" alt="{{ include.description }}"/></td></tr>
+</table>

@@ -8,7 +8,7 @@
     
       <item>
         <title>Bin Packing</title>
-        <description>&lt;h2 id=&quot;bin-packing&quot;&gt;Bin Packing&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic &lt;a href=&quot;https://en.wikipedia.org/wiki/Bin_packing_problem&quot;&gt;bin packing problem&lt;/a&gt;, we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-completeness&quot;&gt;NP complete&lt;/a&gt; problems.&lt;/p&gt;
 
@@ -17,6 +17,15 @@
 &lt;h3 id=&quot;first-fit&quot;&gt;First Fit&lt;/h3&gt;
 
 &lt;p&gt;The first fit algorithm is the simplest algorithm that one can think of for solving the bin packing problem. For each item, we put it in the first bin that fits. If there are no bins where this item fits, we open a new bin and we put the item there. It can be shown that this algorithm produces a solution that is at most two times the optimal solution. That means if the optimal solution uses X bins then this solution uses at most 2X bins.&lt;/p&gt;
+
+&lt;table class=&quot;image centered&quot;&gt;
+
+&lt;caption align=&quot;bottom&quot;&gt;Illustration of first fit bin packing
+(&lt;a href=&quot;https://www.youtube.com/watch?v=vUxhAmfXs2o&quot;&gt;source&lt;/a&gt;)
+&lt;/caption&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://i.ytimg.com/vi/vUxhAmfXs2o/hqdefault.jpg&quot; alt=&quot;Illustration of first fit bin packing&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;h3 id=&quot;first-fit-descending&quot;&gt;First Fit Descending&lt;/h3&gt;
 
@@ -35,7 +44,6 @@
 &lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
 
 &lt;p&gt;The web application was coded mainly in Javascript. I used the libraries &lt;a href=&quot;https://jqueryui.com/&quot;&gt;jQuery UI&lt;/a&gt; for the drag/drop functionality and &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React.js&lt;/a&gt; for updating the user interface.&lt;/p&gt;
-
 </description>
         <pubDate>Sun, 03 Apr 2016 00:00:00 -0400</pubDate>
         <link>http://femmebot.github.io/Bin-Packing/</link>
@@ -43,39 +51,114 @@
       </item>
     
       <item>
-        <title>Flood It</title>
-        <description>&lt;h2 id=&quot;flood-it&quot;&gt;Flood It&lt;/h2&gt;
-
-&lt;p&gt;In the game Flood It, there is a grid of coloured squares and the user’s objective is to fill the entire grid with one colour. Each turn, the user can “flood” every cell connected to the top left corner of the grid with a single colour. All cells connected to the top right corner is changed to the designated colour. For two cells to be connected, they must have the same colour and be adjacent vertically or horizontally. The objective of the user is to do flood the entire grid in the least number of turns.&lt;/p&gt;
-
-&lt;p&gt;This problem belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; problems meaning it is very difficult to find an exact solution.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Apr 2016 00:00:00 -0400</pubDate>
-        <link>http://femmebot.github.io/Flood-It/</link>
-        <guid isPermaLink="true">http://femmebot.github.io/Flood-It/</guid>
-      </item>
-    
-      <item>
         <title>Transposer</title>
-        <description>&lt;h2 id=&quot;transposer&quot;&gt;Transposer&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back then. Many chord transposer would try to give you a song that is in Bb major as A#. They are the same chord, but A# is almost never seen since it does not make sense.&lt;/p&gt;
+&lt;p&gt;Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord Bb as A#. They are the same chord&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but by convention, the correct name for the chord is usually Bb A#.&lt;/p&gt;
 
-&lt;p&gt;This web application transposes chords and lyrics to any key the user wants. These are its most important features:&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Chord detection&lt;/strong&gt;: Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text contains chords and which text contains lyrics. It will then transpose only the chords.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Knowledge of key signatures&lt;/strong&gt;: The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;This web application contains a combination of several features that distinguish it from existing chord transposition software.&lt;/p&gt;
+
+&lt;h4 id=&quot;chord-detection&quot;&gt;Chord Detection&lt;/h4&gt;
+
+&lt;p&gt;Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Ab7&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Asus4&lt;/code&gt; or chords with a bass note such as &lt;code class=&quot;highlighter-rouge&quot;&gt;F/G&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;multiple-transposition-options&quot;&gt;Multiple Transposition Options&lt;/h4&gt;
+
+&lt;p&gt;The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide it, then the transposer will naively infer the current key signature from the first chord. This saves a lot of time for the user since in the majority of cases, the first chord is the identity of the current key signature.&lt;/p&gt;
+
+&lt;h4 id=&quot;knows-about-key-signatures&quot;&gt;Knows About Key Signatures&lt;/h4&gt;
+
+&lt;p&gt;The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#, as these are not valid chords in Bb major.&lt;/p&gt;
 
 &lt;h3 id=&quot;technology&quot;&gt;Technology&lt;/h3&gt;
 
 &lt;p&gt;The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the &lt;a href=&quot;http://xregexp.com/&quot;&gt;XRegExp&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_expression&quot;&gt;regular expression&lt;/a&gt; javascript library.&lt;/p&gt;
 
+&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;They are called &lt;a href=&quot;https://en.wikipedia.org/wiki/Enharmonic&quot;&gt;enharmonic equivalents&lt;/a&gt; since they are different notations for the same pitch. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
-        <pubDate>Wed, 02 Apr 2014 00:00:00 -0400</pubDate>
+        <pubDate>Sat, 02 Apr 2016 00:00:00 -0400</pubDate>
         <link>http://femmebot.github.io/Transposer/</link>
         <guid isPermaLink="true">http://femmebot.github.io/Transposer/</guid>
+      </item>
+    
+      <item>
+        <title>Flood It</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;In the game Flood It, there is a grid of coloured squares and the user’s objective is to fill the entire grid with one colour. Each turn, the user can “flood” every cell connected to the top left corner of the grid with a single colour. All cells connected to the top right corner is changed to the designated colour. For two cells to be connected, they must have the same colour and be adjacent vertically or horizontally. The objective of the user is to do flood the entire grid in the least number of turns.&lt;/p&gt;
+
+&lt;table class=&quot;image centered&quot;&gt;
+
+&lt;caption align=&quot;bottom&quot;&gt;Image of a Flood It board
+
+&lt;/caption&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/portfolio/images/FloodItBoard.gif&quot; alt=&quot;Image of a Flood It board&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Solving a game of Flood It belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; problems meaning it is very difficult to find an exact solution.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; One simple algorithm to find an approximate solution is to choose the colour that will flood the largest area at each step. This algorithm is known as a &lt;a href=&quot;https://en.wikipedia.org/wiki/Greedy_algorithm&quot;&gt;greedy algorithm&lt;/a&gt; since it takes the locally optimal–but not necessarily globally optimal–action at each step.&lt;/p&gt;
+
+&lt;h2 id=&quot;game&quot;&gt;Game&lt;/h2&gt;
+
+&lt;p&gt;In the game, the computer solves the puzzle by employing the greedy algorithm mentioned above. The objective of the user is to try to beat the solution using less turns than the computer. The number of turns that the user used compared to the computer is displayed at the top as x/y where x and y are the number of turns used by the player and computer, respectively. The user can also ask the computer to solve the puzzle step-by-step using greedy algorithm by clicking the “Solve For Me” button.&lt;/p&gt;
+
+&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;The purpose of this game–other than having fun, of course–is to illustrate how the greedy algorithm performs in practice since it is not easy to analyze the performance of the greedy solution. It is usually quite difficult for the user to find a solution that is better than the computer. This suggests that the greedy algorithm might perform well in practice.&lt;/p&gt;
+
+&lt;h2 id=&quot;algorithms&quot;&gt;Algorithms&lt;/h2&gt;
+
+&lt;h4 id=&quot;simple-cycling&quot;&gt;Simple Cycling&lt;/h4&gt;
+
+&lt;p&gt;The simplest algorithm for solving Flood It is to cycle through all of the colours until the board is filled. This will always solve the problem since at each turn, there must be a colour that gets us closer to the solution. This algorithm gives us a solution that is at most C times the optimal number of turns where C is the number of colours available.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;greedy&quot;&gt;Greedy&lt;/h4&gt;
+
+&lt;p&gt;The greedy algorithm mentioned above to solve Flood It is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this will not always give us the best solution. Consider the following puzzle:&lt;/p&gt;
+
+&lt;table class=&quot;image centered&quot;&gt;
+
+&lt;caption align=&quot;bottom&quot;&gt;A puzzle for which the greedy algorithm performs badly
+(&lt;a href=&quot;https://kunigami.wordpress.com/2012/09/16/flood-it-an-exact-approach/&quot;&gt;source&lt;/a&gt;)
+&lt;/caption&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://kunigami.files.wordpress.com/2013/09/flood-it-bad.png&quot; alt=&quot;A puzzle for which the greedy algorithm performs badly&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The optimal solution takes three turns, which is the best you can possible get. Flood the board in the following sequence: blue, red, then orange. Notice that the greedy algorithm will choose red first as it increases our territory the most. Then, it will choose orange then red then orange and so on. It will choose blue last. This is much worse than the optimal solution.&lt;/p&gt;
+
+&lt;p&gt;We are interested to see if it’s easy for a computer to beat a solution produced by the greedy algorithm. Although in some cases it performs poorly, it might be that on average, it gives a good solution.&lt;/p&gt;
+
+&lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
+
+&lt;p&gt;The game is written in Javascript/&lt;a href=&quot;https://jquery.com/&quot;&gt;jQuery&lt;/a&gt; and HTML.&lt;/p&gt;
+
+&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1001.4420&quot;&gt;Paper&lt;/a&gt; that shows that Flood-It is NP-hard for boards of height &amp;gt;= 3. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;[Blog post] that shows that the simple cycling algorithm gives an approximation ratio of C, the number of colours. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 01 Apr 2016 00:00:00 -0400</pubDate>
+        <link>http://femmebot.github.io/Flood-It/</link>
+        <guid isPermaLink="true">http://femmebot.github.io/Flood-It/</guid>
       </item>
     
   </channel>

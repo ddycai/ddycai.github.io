@@ -46,7 +46,7 @@
 
 
   <div class="entry">
-    <h2 id="bin-packing">Bin Packing</h2>
+    <h2 id="introduction">Introduction</h2>
 
 <p>This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic <a href="https://en.wikipedia.org/wiki/Bin_packing_problem">bin packing problem</a>, we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of <a href="https://en.wikipedia.org/wiki/NP-completeness">NP complete</a> problems.</p>
 
@@ -55,6 +55,15 @@
 <h3 id="first-fit">First Fit</h3>
 
 <p>The first fit algorithm is the simplest algorithm that one can think of for solving the bin packing problem. For each item, we put it in the first bin that fits. If there are no bins where this item fits, we open a new bin and we put the item there. It can be shown that this algorithm produces a solution that is at most two times the optimal solution. That means if the optimal solution uses X bins then this solution uses at most 2X bins.</p>
+
+<table class="image centered">
+
+<caption align="bottom">Illustration of first fit bin packing
+(<a href="https://www.youtube.com/watch?v=vUxhAmfXs2o">source</a>)
+</caption>
+
+<tr><td><img src="https://i.ytimg.com/vi/vUxhAmfXs2o/hqdefault.jpg" alt="Illustration of first fit bin packing" /></td></tr>
+</table>
 
 <h3 id="first-fit-descending">First Fit Descending</h3>
 
@@ -73,7 +82,6 @@
 <h2 id="technology">Technology</h2>
 
 <p>The web application was coded mainly in Javascript. I used the libraries <a href="https://jqueryui.com/">jQuery UI</a> for the drag/drop functionality and <a href="https://facebook.github.io/react/">React.js</a> for updating the user interface.</p>
-
 
   </div>
 

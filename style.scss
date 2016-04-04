@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   
 h1 {  
   font-size: 60px;
-  margin: 60px 0;
+  margin: 30px 0;
   a {
     color: $red;
     &:hover {
@@ -101,18 +101,18 @@ h1 {
 
 h2 {  
   font-size: 24px;
-  margin: 48px 0 12px;
+  margin: 30px 0 12px;
 }
 
 h3 {  
   font-size: 20px;
-  margin: 40px 0 10px;
+  margin: 24px 0 10px;
 }
 
 h4 {  
   font-size: 18px;
   color: $gray;
-  margin: 36px 0 9px;
+  margin: 20px 0 9px;
 }
 
 p {
@@ -358,6 +358,37 @@ article {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
+}
+
+/*
+.details {
+  margin-left: 625px;
+  .image {
+    float: left;
+    width: 625px;
+    margin-left: -625px;
+  }
+  .sidebar {
+    float: right;
+    width: 100%;
+  }
+  .cleared {
+    clear: both;
+  }
+}*/
+
+.float-right{
+    float: left;
+}
+
+table .centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+sup {
+  font-size:xx-small;
+  vertical-align:super;
 }
 
 footer {

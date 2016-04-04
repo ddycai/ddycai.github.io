@@ -42,25 +42,43 @@
         <article class="post">
   <h1>Transposer</h1>
   <a href="https://frigidrain.github.io/transposer" class="large-link" target="_blank">View Project Site <i class="fa fa-external-link"></i></a> 
-  <div class="date">Posted April  2, 2014</div>
+  <div class="date">Posted April  2, 2016</div>
 
 
   <div class="entry">
-    <h2 id="transposer">Transposer</h2>
+    <h2 id="introduction">Introduction</h2>
 
-<p>Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back then. Many chord transposer would try to give you a song that is in Bb major as A#. They are the same chord, but A# is almost never seen since it does not make sense.</p>
+<p>Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord Bb as A#. They are the same chord<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, but by convention, the correct name for the chord is usually Bb A#.</p>
 
-<p>This web application transposes chords and lyrics to any key the user wants. These are its most important features:</p>
+<h2 id="features">Features</h2>
 
-<ol>
-  <li><strong>Chord detection</strong>: Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text contains chords and which text contains lyrics. It will then transpose only the chords.</li>
-  <li><strong>Knowledge of key signatures</strong>: The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#.</li>
-</ol>
+<p>This web application contains a combination of several features that distinguish it from existing chord transposition software.</p>
+
+<h4 id="chord-detection">Chord Detection</h4>
+
+<p>Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as <code class="highlighter-rouge">Ab7</code> and <code class="highlighter-rouge">Asus4</code> or chords with a bass note such as <code class="highlighter-rouge">F/G</code>.</p>
+
+<h4 id="multiple-transposition-options">Multiple Transposition Options</h4>
+
+<p>The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide it, then the transposer will naively infer the current key signature from the first chord. This saves a lot of time for the user since in the majority of cases, the first chord is the identity of the current key signature.</p>
+
+<h4 id="knows-about-key-signatures">Knows About Key Signatures</h4>
+
+<p>The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#, as these are not valid chords in Bb major.</p>
 
 <h3 id="technology">Technology</h3>
 
 <p>The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the <a href="http://xregexp.com/">XRegExp</a> <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a> javascript library.</p>
 
+<h4 id="footnotes">Footnotes</h4>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>They are called <a href="https://en.wikipedia.org/wiki/Enharmonic">enharmonic equivalents</a> since they are different notations for the same pitch. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
 

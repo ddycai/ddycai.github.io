@@ -6,8 +6,8 @@ permalink: /about/
 
 Hello, my name is Duncan. I am undergraduate student at the [University of Western Ontario](http://www.uwo.ca/) studying computer science and business. I am an aspiring software engineer, and some of my interests in the area of software/computing include
 
-1. Clever algorithms: I really like learning about algorithms and being introduced to new types of problems in computer science.
-2. Data analytics: I am not a statistician, but I like work involving drawing insights from large amount of data.
+1. **Clever algorithms**: I really like learning about algorithms and being introduced to new types of problems in computer science.
+2. **Data analytics**: I am not a statistician, but I like work involving drawing insights from large amount of data.
 
 Don't even get me started on using clever algorithms to analyze data!
 

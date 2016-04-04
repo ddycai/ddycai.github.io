@@ -7,7 +7,7 @@ proj-num: 01
 thumb: BinPacking.png
 ---
 
-## Bin Packing
+## Introduction
 
 This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic [bin packing problem](https://en.wikipedia.org/wiki/Bin_packing_problem), we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of [NP complete](https://en.wikipedia.org/wiki/NP-completeness) problems.
 
@@ -16,6 +16,8 @@ Instead, there are a set of [approximation algorithms](https://en.wikipedia.org/
 ### First Fit
 
 The first fit algorithm is the simplest algorithm that one can think of for solving the bin packing problem. For each item, we put it in the first bin that fits. If there are no bins where this item fits, we open a new bin and we put the item there. It can be shown that this algorithm produces a solution that is at most two times the optimal solution. That means if the optimal solution uses X bins then this solution uses at most 2X bins.
+
+{% include captioned_image.html url="https://i.ytimg.com/vi/vUxhAmfXs2o/hqdefault.jpg" description="Illustration of first fit bin packing" source="https://www.youtube.com/watch?v=vUxhAmfXs2o" %}
 
 ### First Fit Descending
 
@@ -34,4 +36,3 @@ To make the task of beating the computer simpler, the computer will take the wor
 ## Technology
 
 The web application was coded mainly in Javascript. I used the libraries [jQuery UI](https://jqueryui.com/) for the drag/drop functionality and [React.js](https://facebook.github.io/react/) for updating the user interface.
-
