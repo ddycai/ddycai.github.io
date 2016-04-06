@@ -286,9 +286,9 @@ nav {
   a {
     margin-left: 20px;
     color: $gray;
-    width: 75px;
+    width: 100px;
     display: block;
-    float: right;
+    float: left;
 
     @include mobile {
       display: inline-block;

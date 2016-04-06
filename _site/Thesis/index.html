@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <title>404 - Page not found – Duncan Cai – Welcome to my portfolio</title>
+    <title>Thesis – Duncan Cai – Welcome to my portfolio</title>
 
     <meta name="author" content="Duncan Cai" />
     <meta name="description" content="Welcome to my portfolio">
@@ -39,18 +39,46 @@
 
 
       <div id="main" role="main" class="container">
-        <article class="page">
-  
-  <h1>404 - Page not found</h1>
+        <article class="post">
+  <h1>Thesis</h1>
+  <a href="https://frigidrain.github.io/2dspp-lp" class="large-link" target="_blank">View Project Site <i class="fa fa-external-link"></i></a> 
+  <div class="date">Posted April  4, 2016</div>
+
 
   <div class="entry">
-    <p>Sorry, we can’t find that page that you’re looking for. You can try take for a look by going <a href="/portfolio/">back to the homepage</a>.</p>
+    <h2 id="introduction">Introduction</h2>
 
-<p><a href="/portfolio/"><img src="/portfolio/images/404.jpg" alt="Constructocat by https://github.com/jasoncostello" style="width: 400px;" /></a></p>
+<p>In the 2-dimensional strip packing problem (2DSPP), we are given a set of rectangles of height and width at most W and we wish to pack them in a strip of size of width W and infinite height by taking up the least amount of height. The problem is <a href="https://en.wikipedia.org/wiki/NP-hardness">NP-hard</a> meaning it is very difficult to find the arrangement of rectangles which gives us the smallest height. In this case, we want to design algorithms which gives a solution that is close to the optimal.</p>
+
+<p>The high multiplicity strip packing problem (HMSPP) is a type of 2DSPP where we are given a set of different types of rectangles (rectangles with different widths and heights), but we want to pack a certain number of each of these rectangles. Therefore, many of the rectangles that we wish to pack are duplicates.</p>
+
+<p>For my undergraduate thesis, I was looking to improve upon an algorithm for solving the HMSPP designed by Devon Price.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> To give me ideas for improving the algorithm, I wrote a program that visualizes solutions given by Price’s algorithm.</p>
+
+<h2 id="applications">Applications</h2>
+
+<p>At first glance, it might not be obvious how solving the 2DSPP is useful. Here is an interesting application of the problem:</p>
+
+<p>Imagine that you have a rectangular slab of material, which could be cloth, wood, glass etc. You want to cut various pieces out of it for building furniture, making cloth etc., but you want to minimize the amount of cloth that is wasted when you do this. The slab of material in this case corresponds to the strip in 2DSPP, and the pieces that we need to cut out from the material correspond to the rectangles.</p>
+
+<h2 id="technology">Technology</h2>
+
+<p>The program was written in Javascript and uses HTML5 Canvas to draw the shapes.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://ir.lib.uwo.ca/cgi/viewcontent.cgi?article=3369&amp;context=etd">High Multiplicity Strip Packing</a> by Devon Price <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
-</article>
 
+
+  
+</article>
       </div>
 
     </div><!-- /content-wrapper -->

@@ -344,9 +344,9 @@ nav {
 nav a {
   margin-left: 20px;
   color: #777;
-  width: 75px;
+  width: 100px;
   display: block;
-  float: right;
+  float: left;
 }
 @media screen and (max-width: 640px) {
   nav a {

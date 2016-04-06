@@ -7,6 +7,41 @@
     <atom:link href="http://femmebot.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Thesis</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;In the 2-dimensional strip packing problem (2DSPP), we are given a set of rectangles of height and width at most W and we wish to pack them in a strip of size of width W and infinite height by taking up the least amount of height. The problem is &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; meaning it is very difficult to find the arrangement of rectangles which gives us the smallest height. In this case, we want to design algorithms which gives a solution that is close to the optimal.&lt;/p&gt;
+
+&lt;p&gt;The high multiplicity strip packing problem (HMSPP) is a type of 2DSPP where we are given a set of different types of rectangles (rectangles with different widths and heights), but we want to pack a certain number of each of these rectangles. Therefore, many of the rectangles that we wish to pack are duplicates.&lt;/p&gt;
+
+&lt;p&gt;For my undergraduate thesis, I was looking to improve upon an algorithm for solving the HMSPP designed by Devon Price.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; To give me ideas for improving the algorithm, I wrote a program that visualizes solutions given by Price’s algorithm.&lt;/p&gt;
+
+&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
+
+&lt;p&gt;At first glance, it might not be obvious how solving the 2DSPP is useful. Here is an interesting application of the problem:&lt;/p&gt;
+
+&lt;p&gt;Imagine that you have a rectangular slab of material, which could be cloth, wood, glass etc. You want to cut various pieces out of it for building furniture, making cloth etc., but you want to minimize the amount of cloth that is wasted when you do this. The slab of material in this case corresponds to the strip in 2DSPP, and the pieces that we need to cut out from the material correspond to the rectangles.&lt;/p&gt;
+
+&lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
+
+&lt;p&gt;The program was written in Javascript and uses HTML5 Canvas to draw the shapes.&lt;/p&gt;
+
+&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://ir.lib.uwo.ca/cgi/viewcontent.cgi?article=3369&amp;amp;context=etd&quot;&gt;High Multiplicity Strip Packing&lt;/a&gt; by Devon Price &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 04 Apr 2016 00:00:00 -0400</pubDate>
+        <link>http://femmebot.github.io/Thesis/</link>
+        <guid isPermaLink="true">http://femmebot.github.io/Thesis/</guid>
+      </item>
+    
+      <item>
         <title>Bin Packing</title>
         <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
@@ -54,7 +89,7 @@
         <title>Transposer</title>
         <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord Bb as A#. They are the same chord&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but by convention, the correct name for the chord is usually Bb A#.&lt;/p&gt;
+&lt;p&gt;Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord &lt;strong&gt;Bb&lt;/strong&gt; as &lt;strong&gt;A#&lt;/strong&gt;. They are the same chord&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but by convention, the correct name for the chord is usually &lt;strong&gt;Bb&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 
@@ -62,15 +97,15 @@
 
 &lt;h4 id=&quot;chord-detection&quot;&gt;Chord Detection&lt;/h4&gt;
 
-&lt;p&gt;Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Ab7&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Asus4&lt;/code&gt; or chords with a bass note such as &lt;code class=&quot;highlighter-rouge&quot;&gt;F/G&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as &lt;strong&gt;Ab7&lt;/strong&gt; and &lt;strong&gt;Asus4&lt;/strong&gt; or chords with a bass note such as &lt;strong&gt;F/G&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;multiple-transposition-options&quot;&gt;Multiple Transposition Options&lt;/h4&gt;
 
-&lt;p&gt;The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide it, then the transposer will naively infer the current key signature from the first chord. This saves a lot of time for the user since in the majority of cases, the first chord is the identity of the current key signature.&lt;/p&gt;
+&lt;p&gt;The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide the current key signature, then the transposer will naively infer the current key signature from the first chord. In the majority of cases, the first chord identifies the key signature, which saves users the trouble of having to state it for the program.&lt;/p&gt;
 
 &lt;h4 id=&quot;knows-about-key-signatures&quot;&gt;Knows About Key Signatures&lt;/h4&gt;
 
-&lt;p&gt;The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#, as these are not valid chords in Bb major.&lt;/p&gt;
+&lt;p&gt;The transposer understands which chords are valid in the target key signature and will only output those chords. For example, if we are transposing to &lt;strong&gt;Bb&lt;/strong&gt; major, the chord transposer will not output &lt;strong&gt;A#&lt;/strong&gt; or &lt;strong&gt;E#&lt;/strong&gt;, as these are not valid chords in &lt;strong&gt;Bb&lt;/strong&gt; major.&lt;/p&gt;
 
 &lt;h3 id=&quot;technology&quot;&gt;Technology&lt;/h3&gt;
 
@@ -95,7 +130,7 @@
         <title>Flood It</title>
         <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;In the game Flood It, there is a grid of coloured squares and the user’s objective is to fill the entire grid with one colour. Each turn, the user can “flood” every cell connected to the top left corner of the grid with a single colour. All cells connected to the top right corner is changed to the designated colour. For two cells to be connected, they must have the same colour and be adjacent vertically or horizontally. The objective of the user is to do flood the entire grid in the least number of turns.&lt;/p&gt;
+&lt;p&gt;In the game Flood It, there is a grid of coloured squares and the user’s objective is to fill the entire grid with one colour. Each turn, the user can “flood” every cell connected to the top left corner of the grid with a single colour. All cells connected to the top left corner are changed to the designated colour. For two cells to be connected, they must have the same colour and be adjacent vertically or horizontally. The objective of the user is to flood the entire grid in the least number of turns.&lt;/p&gt;
 
 &lt;table class=&quot;image centered&quot;&gt;
 
@@ -110,21 +145,21 @@
 
 &lt;h2 id=&quot;game&quot;&gt;Game&lt;/h2&gt;
 
-&lt;p&gt;In the game, the computer solves the puzzle by employing the greedy algorithm mentioned above. The objective of the user is to try to beat the solution using less turns than the computer. The number of turns that the user used compared to the computer is displayed at the top as x/y where x and y are the number of turns used by the player and computer, respectively. The user can also ask the computer to solve the puzzle step-by-step using greedy algorithm by clicking the “Solve For Me” button.&lt;/p&gt;
+&lt;p&gt;In the game, the computer solves the puzzle by employing the greedy algorithm mentioned above. The objective of the user is to try to beat the solution using fewer turns than the computer. The number of turns that the user used compared to the computer is displayed at the top as x/y where x and y are the number of turns used by the player and computer, respectively. The user can also ask the computer to solve the puzzle step-by-step using greedy algorithm by clicking the “Solve For Me” button.&lt;/p&gt;
 
 &lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
 
-&lt;p&gt;The purpose of this game–other than having fun, of course–is to illustrate how the greedy algorithm performs in practice since it is not easy to analyze the performance of the greedy solution. It is usually quite difficult for the user to find a solution that is better than the computer. This suggests that the greedy algorithm might perform well in practice.&lt;/p&gt;
+&lt;p&gt;The purpose of this game–other than having fun, of course–is to explore how the greedy algorithm performs in practice since it is not easy to analyze the performance of the greedy solution. In my experience, it is pretty difficult to find a solution better than the optimal one produced by the computer. This might suggest that the greedy algorithm performs quite well on randomly generated puzzles.&lt;/p&gt;
 
 &lt;h2 id=&quot;algorithms&quot;&gt;Algorithms&lt;/h2&gt;
 
 &lt;h4 id=&quot;simple-cycling&quot;&gt;Simple Cycling&lt;/h4&gt;
 
-&lt;p&gt;The simplest algorithm for solving Flood It is to cycle through all of the colours until the board is filled. This will always solve the problem since at each turn, there must be a colour that gets us closer to the solution. This algorithm gives us a solution that is at most C times the optimal number of turns where C is the number of colours available.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;The simplest algorithm for solving Flood It is to cycle through all of the colours until the board is filled. This will always solve the problem since at each turn, there must be a colour that gets us closer to the solution. This algorithm gives us a solution that is at most C times the optimal number of turns where C is the number of colours available.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Why is this true? Since each step of the optimal solution chooses some colour, if we try all of them we use up C turns for each turn that the optimal solution uses.&lt;/p&gt;
 
 &lt;h4 id=&quot;greedy&quot;&gt;Greedy&lt;/h4&gt;
 
-&lt;p&gt;The greedy algorithm mentioned above to solve Flood It is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this may give us something far from the best solution. Consider the following puzzle:&lt;/p&gt;
+&lt;p&gt;Unlike the simple cycling algorithm, there is no limit to how badly the greedy algorithm performs. The greedy algorithm mentioned above to solve Flood It is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this may give us something far from the best solution. Consider the following puzzle:&lt;/p&gt;
 
 &lt;table class=&quot;image centered&quot;&gt;
 
@@ -137,7 +172,7 @@
 
 &lt;p&gt;The optimal solution takes three turns, which is the best we can possibly get. The solution is to flood the board in the following sequence: blue, red, then orange. Notice that the greedy algorithm will choose red first as it increases our territory the most. Then, it will choose orange then red then orange and so on. It will choose blue last. This is much worse than the optimal solution.&lt;/p&gt;
 
-&lt;p&gt;We are interested to see if it’s easy for a computer to beat a solution produced by the greedy algorithm. Although in some cases it performs poorly, it might be that on average, it gives a good solution.&lt;/p&gt;
+&lt;p&gt;We are interested to see if it’s easy for a user to beat a solution produced by the greedy algorithm. Although in some cases it performs poorly, it might be that on average, it gives a good solution.&lt;/p&gt;
 
 &lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
 
@@ -151,7 +186,7 @@
       &lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1001.4420&quot;&gt;Paper&lt;/a&gt; that shows that Flood-It is NP-hard for boards of height &amp;gt;= 3. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;[Blog post] that shows that the simple cycling algorithm gives an approximation ratio of C, the number of colours. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://kunigami.wordpress.com/2012/09/16/flood-it-an-exact-approach/&quot;&gt;Blog post&lt;/a&gt; that shows that the simple cycling algorithm gives an approximation ratio of C, the number of colours. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;

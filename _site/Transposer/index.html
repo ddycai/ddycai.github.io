@@ -27,10 +27,10 @@
           <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="/portfolio/" class="site-avatar"><img src="https://avatars2.githubusercontent.com/u/1658485?v=3&s=40" alt="Duncan Cai" /></a>
+          <a href="/portfolio/" class="site-avatar"><img src="https://github.com/frigidrain.png?size=40" alt="Duncan Cai" /></a>
 
           <nav>
-            <a href="/portfolio">Home</a>
+            <a href="/portfolio/">Home</a>
             <a href="/portfolio/about">About</a>
           </nav>
         </header>
@@ -48,7 +48,7 @@
   <div class="entry">
     <h2 id="introduction">Introduction</h2>
 
-<p>Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord Bb as A#. They are the same chord<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, but by convention, the correct name for the chord is usually Bb A#.</p>
+<p>Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord <strong>Bb</strong> as <strong>A#</strong>. They are the same chord<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, but by convention, the correct name for the chord is usually <strong>Bb</strong>.</p>
 
 <h2 id="features">Features</h2>
 
@@ -56,15 +56,15 @@
 
 <h4 id="chord-detection">Chord Detection</h4>
 
-<p>Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as <code class="highlighter-rouge">Ab7</code> and <code class="highlighter-rouge">Asus4</code> or chords with a bass note such as <code class="highlighter-rouge">F/G</code>.</p>
+<p>Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as <strong>Ab7</strong> and <strong>Asus4</strong> or chords with a bass note such as <strong>F/G</strong>.</p>
 
 <h4 id="multiple-transposition-options">Multiple Transposition Options</h4>
 
-<p>The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide it, then the transposer will naively infer the current key signature from the first chord. This saves a lot of time for the user since in the majority of cases, the first chord is the identity of the current key signature.</p>
+<p>The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide the current key signature, then the transposer will naively infer the current key signature from the first chord. In the majority of cases, the first chord identifies the key signature, which saves users the trouble of having to state it for the program.</p>
 
 <h4 id="knows-about-key-signatures">Knows About Key Signatures</h4>
 
-<p>The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#, as these are not valid chords in Bb major.</p>
+<p>The transposer understands which chords are valid in the target key signature and will only output those chords. For example, if we are transposing to <strong>Bb</strong> major, the chord transposer will not output <strong>A#</strong> or <strong>E#</strong>, as these are not valid chords in <strong>Bb</strong> major.</p>
 
 <h3 id="technology">Technology</h3>
 

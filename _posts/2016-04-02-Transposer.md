@@ -9,7 +9,7 @@ thumb: Transposer.png
 
 ## Introduction
 
-Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn't find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord Bb as A#. They are the same chord[^1], but by convention, the correct name for the chord is usually Bb A#.
+Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn't find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord **Bb** as **A#**. They are the same chord[^1], but by convention, the correct name for the chord is usually **Bb**.
 
 ## Features
 
@@ -17,15 +17,15 @@ This web application contains a combination of several features that distinguish
 
 #### Chord Detection
 
-Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as `Ab7` and `Asus4` or chords with a bass note such as `F/G`.
+Given a bunch of lyrics containing both chords and lyrics, it can tell with reasonably high accuracy which text is a chord and which text are lyrics. It will then transpose only the chords, leaving the lyrics intact. It can identify and transpose a variety of chords including chords with suffixes such as **Ab7** and **Asus4** or chords with a bass note such as **F/G**.
 
 #### Multiple Transposition Options
 
-The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide it, then the transposer will naively infer the current key signature from the first chord. This saves a lot of time for the user since in the majority of cases, the first chord is the identity of the current key signature.
+The user can choose to either transpose to a target key signature or transpose up/down a certain number of semitones. If the user chooses the latter option, the transposer will need to know the current key signature from the user. If the user does not provide the current key signature, then the transposer will naively infer the current key signature from the first chord. In the majority of cases, the first chord identifies the key signature, which saves users the trouble of having to state it for the program.
 
 #### Knows About Key Signatures
 
-The transposer will only output chords which are part of the target key signature. For example, if we are transposing to Bb major, the chord transposer will not output A# or E#, as these are not valid chords in Bb major.
+The transposer understands which chords are valid in the target key signature and will only output those chords. For example, if we are transposing to **Bb** major, the chord transposer will not output **A#** or **E#**, as these are not valid chords in **Bb** major.
 
 ### Technology
 

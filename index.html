@@ -4,8 +4,10 @@ layout: home
 
 <div class="posts clearfix">
   {% for post in site.posts %}
-    <article class="post">    
-      <div class="eyebrow">{{ post.date | date: "%d %b %Y" }}</div>
+    <article class="post">   
+      <div class="eyebrow">{{ post.date | date: "%d %b %Y" }}
+      {% if post.label_wip %}<span class="label label-warning">Work in Progress</span>{% endif %}
+      </div>
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       <a href="{{ site.baseurl }}{{ post.url }}"><img src="images/{{ post.thumb }}" alt="{{ post.title }}" /></a>
