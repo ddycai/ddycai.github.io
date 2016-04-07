@@ -9,9 +9,11 @@ thumb: BinPacking.png
 
 ## Introduction
 
-This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic [bin packing problem](https://en.wikipedia.org/wiki/Bin_packing_problem), we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of [NP complete](https://en.wikipedia.org/wiki/NP-completeness) problems.
+This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic [bin packing problem](https://en.wikipedia.org/wiki/Bin_packing_problem), we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of [NP-hard](https://en.wikipedia.org/wiki/NP-hardness) problems.
 
 Instead, there are a set of [approximation algorithms](https://en.wikipedia.org/wiki/Approximation_algorithm) that will not find the optimal solution but will find a solution that is close to the optimal solution. In my web application, I explore the performance of two different algorithms named **first fit** and **first fit descending** through a simple game.
+
+The purpose is to show how well approximation algorithms--which do not find the exact solution--perform in practice. I was surprised by how difficult it is for to beat the computer's "dumb" approach to solving the problem (described below).
 
 ### First Fit
 
@@ -27,11 +29,7 @@ The first fit descending algorithm is an improvement upon the first fit algorith
 
 In this simple game, the player is a worker in a factory that is presumably in the business of packing boxes. Blue squares representing items of various sizes are generated to the left, with each square containing a number that indicates the weight of each box. The player's objective is to pack these items into each bin using the least amount of bins. The computer will run first fit and first fit descending described above to solve the problems. The player's aim is to solve the problem using less bins than the computer.
 
-## Purpose
-
-The purpose is to show that the approximation algorithms which do not find the exact solution perform quite well in practice. The player may have difficulty beating the computer's "dumb" approach to solving the problem. It is possible that the computer sometimes finds the optimal solution, in which case there is no way for the player to beat the computer.
-
-To make the task of beating the computer simpler, the computer will take the worse solution out of first fit and first fit descending. The reason is that although first fit descending seems to be a better algorithm, it sometimes finds a worse solution than first fit in practice. This is also to make it less likely that the computer finds the optimal solution, in which case the user cannot do better.
+To make the task of beating the computer simpler, the computer will take the worst solution between the ones given by first fit and first fit descending. The reason is that although first fit descending seems to be a better algorithm, it sometimes finds a worse solution than first fit in practice. This is also to make it less likely that the computer finds the optimal solution, in which case the user cannot do better.
 
 ## Technology
 

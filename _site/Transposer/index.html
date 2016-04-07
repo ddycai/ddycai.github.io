@@ -5,33 +5,34 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <title>Transposer – Duncan Cai – Welcome to my portfolio</title>
+    <title>Transposer – Duncan Cai – aspiring software engineer</title>
 
     <meta name="author" content="Duncan Cai" />
-    <meta name="description" content="Welcome to my portfolio">
+    <meta name="description" content="aspiring software engineer">
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="/portfolio/style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="alternate" type="application/rss+xml" title="Duncan Cai - Welcome to my portfolio" href="/portfolio/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Duncan Cai - aspiring software engineer" href="/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
+    <a name="0"></a>
     <div class="content-wrapper">
 
           <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="/portfolio/" class="site-avatar"><img src="https://github.com/frigidrain.png?size=40" alt="Duncan Cai" /></a>
+          <a href="/" class="site-avatar"><img src="https://github.com/frigidrain.png?size=40" alt="Duncan Cai" /></a>
 
           <nav>
-            <a href="/portfolio/">Home</a>
-            <a href="/portfolio/about">About</a>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
           </nav>
         </header>
       </div>
@@ -42,13 +43,13 @@
         <article class="post">
   <h1>Transposer</h1>
   <a href="https://frigidrain.github.io/transposer" class="large-link" target="_blank">View Project Site <i class="fa fa-external-link"></i></a> 
-  <div class="date">Posted April  2, 2016</div>
+  <div class="date">Created December 24, 2014</div>
 
 
   <div class="entry">
     <h2 id="introduction">Introduction</h2>
 
-<p>Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord <strong>Bb</strong> as <strong>A#</strong>. They are the same chord<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, but by convention, the correct name for the chord is usually <strong>Bb</strong>.</p>
+<p>Singers often have to change the key of their song so that the notes are within their vocal range. As someone who sometimes gives singing a try, I found myself going through the painstaking process of transposing chords by hand. To save myself some time, I wrote this program to transpose chords automatically for me. I did find some chord transposers online at the time, but I wasn’t satisfied with their performance. For example, they would often give the wrong form of a chord. For example, the chord <strong>Bb</strong> would be given as <strong>A#</strong>. They are the same chord<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, but <strong>A#</strong> is almost never seen and would be incorrect in most key signatures.</p>
 
 <h2 id="features">Features</h2>
 
@@ -66,11 +67,11 @@
 
 <p>The transposer understands which chords are valid in the target key signature and will only output those chords. For example, if we are transposing to <strong>Bb</strong> major, the chord transposer will not output <strong>A#</strong> or <strong>E#</strong>, as these are not valid chords in <strong>Bb</strong> major.</p>
 
-<h3 id="technology">Technology</h3>
+<h2 id="technology">Technology</h2>
 
 <p>The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the <a href="http://xregexp.com/">XRegExp</a> <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a> javascript library.</p>
 
-<h4 id="footnotes">Footnotes</h4>
+<h2 id="footnotes">Footnotes</h2>
 
 <div class="footnotes">
   <ol>
@@ -81,7 +82,7 @@
 </div>
 
   </div>
-
+  <div><a href="#0">Back to top</a></div>
 
   
 </article>

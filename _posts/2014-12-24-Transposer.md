@@ -9,7 +9,7 @@ thumb: Transposer.png
 
 ## Introduction
 
-Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn't find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord **Bb** as **A#**. They are the same chord[^1], but by convention, the correct name for the chord is usually **Bb**.
+Singers often have to change the key of their song so that the notes are within their vocal range. As someone who sometimes gives singing a try, I found myself going through the painstaking process of transposing chords by hand. To save myself some time, I wrote this program to transpose chords automatically for me. I did find some chord transposers online at the time, but I wasn't satisfied with their performance. For example, they would often give the wrong form of a chord. For example, the chord **Bb** would be given as **A#**. They are the same chord[^1], but **A#** is almost never seen and would be incorrect in most key signatures.
 
 ## Features
 
@@ -27,10 +27,10 @@ The user can choose to either transpose to a target key signature or transpose u
 
 The transposer understands which chords are valid in the target key signature and will only output those chords. For example, if we are transposing to **Bb** major, the chord transposer will not output **A#** or **E#**, as these are not valid chords in **Bb** major.
 
-### Technology
+## Technology
 
 The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the [XRegExp](http://xregexp.com/) [regular expression](https://en.wikipedia.org/wiki/Regular_expression) javascript library.
 
-#### Footnotes
+## Footnotes
 
 [^1]:They are called [enharmonic equivalents](https://en.wikipedia.org/wiki/Enharmonic) since they are different notations for the same pitch.

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Duncan Cai</title>
-    <description>Welcome to my portfolio</description>
+    <description>aspiring software engineer</description>
     <link>http://femmebot.github.io</link>
     <atom:link href="http://femmebot.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -10,17 +10,36 @@
         <title>Thesis</title>
         <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;In the 2-dimensional strip packing problem (2DSPP), we are given a set of rectangles of height and width at most W and we wish to pack them in a strip of size of width W and infinite height by taking up the least amount of height. The problem is &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; meaning it is very difficult to find the arrangement of rectangles which gives us the smallest height. In this case, we want to design algorithms which gives a solution that is close to the optimal.&lt;/p&gt;
+&lt;p&gt;In the 2-dimensional strip packing problem (2DSPP), we are given a set of rectangles of height and width greater than 0 and less than or equal to 1, and we wish to pack them in a container (or strip) of width 1 and infinite height. We want the packing to have the smallest height possible. The problem is &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; meaning it is very difficult to find the arrangement of rectangles which gives us the smallest height. When we can’t find the exact solution easily, we try to design &lt;a href=&quot;https://en.wikipedia.org/wiki/Approximation_algorithm&quot;&gt;approximation algorithms&lt;/a&gt; which give solutions which are not optimal, but within a factor of the optimum.&lt;/p&gt;
 
-&lt;p&gt;The high multiplicity strip packing problem (HMSPP) is a type of 2DSPP where we are given a set of different types of rectangles (rectangles with different widths and heights), but we want to pack a certain number of each of these rectangles. Therefore, many of the rectangles that we wish to pack are duplicates.&lt;/p&gt;
+&lt;p&gt;The high multiplicity strip packing problem is a type of 2DSPP where we are given a set of different types of rectangles (rectangles with different widths and heights), but we want to pack a certain number of each of these rectangles. Therefore, many of the rectangles that we wish to pack are duplicates.&lt;/p&gt;
 
-&lt;p&gt;For my undergraduate thesis, I was looking to improve upon an algorithm for solving the HMSPP designed by Devon Price.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; To give me ideas for improving the algorithm, I wrote a program that visualizes solutions given by Price’s algorithm.&lt;/p&gt;
+&lt;p&gt;For my undergraduate thesis, I was looking to improve upon an algorithm for solving the high multiplicity strip packing problem in the case where there are only four rectangle types.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; I wrote a program that visualizes solutions for the rectangle packing problem to give me ideas for solving it.&lt;/p&gt;
+
+&lt;h2 id=&quot;general-idea&quot;&gt;General Idea&lt;/h2&gt;
+
+&lt;p&gt;One way to solve the strip packing problem is by first solving the &lt;strong&gt;fractional strip packing problem&lt;/strong&gt;. In the fractional version of the problem, we are allowed to cheat by cutting rectangles in pieces and packing these fractional pieces instead. It turns out that the fractional strip packing problem is much easier to solve than the strip packing problem, and we can find an optimal solution quickly.&lt;/p&gt;
+
+&lt;table class=&quot;image centered&quot;&gt;
+
+&lt;caption align=&quot;bottom&quot;&gt;An example of a fractional packing. Notice how some rectangles are not whole.
+
+&lt;/caption&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/images/packing.png&quot; alt=&quot;An example of a fractional packing. Notice how some rectangles are not whole.&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Once we have an optimal solution for the fractional strip packing problem, we must convert the fractional packing into an integral packing. This means we need to combine the fractional pieces into whole rectangles such that there no fractional pieces left over. This will always increase the height of the packing since we need more space to fit whole rectangles than fractional rectangles. This is the hard part. How do we combine the fractional parts into whole rectangles without increasing the height of the packing by too much?&lt;/p&gt;
+
+&lt;p&gt;Since the fractional solution uses space as efficiently as possible, the optimal solution cannot have a lower height. This is a very useful property since it means that the height of the fractional solution acts as a lower bound for the height of the optimal solution–whatever the optimal is.  For example, if we increase the height of the fractional solution by K when we convert it into an integral solution then our resulting solution cannot be greater than the height of the optimal solution plus K.&lt;/p&gt;
+
+&lt;p&gt;In Price’s paper, he found a way to pack K rectangle types with a height increase of K - 1. For four rectangle types, this gives us a height increase of 3. The aim of my thesis is to try to pack four rectangles with a height increase of less than 3.&lt;/p&gt;
 
 &lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
 
 &lt;p&gt;At first glance, it might not be obvious how solving the 2DSPP is useful. Here is an interesting application of the problem:&lt;/p&gt;
 
-&lt;p&gt;Imagine that you have a rectangular slab of material, which could be cloth, wood, glass etc. You want to cut various pieces out of it for building furniture, making cloth etc., but you want to minimize the amount of cloth that is wasted when you do this. The slab of material in this case corresponds to the strip in 2DSPP, and the pieces that we need to cut out from the material correspond to the rectangles.&lt;/p&gt;
+&lt;p&gt;Imagine that you have a rectangular slab of material, which could be cloth, wood, glass etc. You want to cut various pieces out of it for building furniture, making cloth etc., but you want to minimize the amount of material that is wasted when you do this. The slab of material in this case corresponds to the strip in 2DSPP, and the pieces that we need to cut out from the material correspond to the rectangles.&lt;/p&gt;
 
 &lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
 
@@ -36,7 +55,7 @@
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Mon, 04 Apr 2016 00:00:00 -0400</pubDate>
+        <pubDate>Sat, 19 Mar 2016 00:00:00 -0400</pubDate>
         <link>http://femmebot.github.io/Thesis/</link>
         <guid isPermaLink="true">http://femmebot.github.io/Thesis/</guid>
       </item>
@@ -45,9 +64,11 @@
         <title>Bin Packing</title>
         <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic &lt;a href=&quot;https://en.wikipedia.org/wiki/Bin_packing_problem&quot;&gt;bin packing problem&lt;/a&gt;, we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-completeness&quot;&gt;NP complete&lt;/a&gt; problems.&lt;/p&gt;
+&lt;p&gt;This is a bin packing web application intended to demonstrate the effectiveness of bin packing approximation algorithms. In the classic &lt;a href=&quot;https://en.wikipedia.org/wiki/Bin_packing_problem&quot;&gt;bin packing problem&lt;/a&gt;, we want to pack a set of items of various weights into bins of equal size by using the least number of bins. It is very difficult to find the exact solution to this problem because it belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; problems.&lt;/p&gt;
 
 &lt;p&gt;Instead, there are a set of &lt;a href=&quot;https://en.wikipedia.org/wiki/Approximation_algorithm&quot;&gt;approximation algorithms&lt;/a&gt; that will not find the optimal solution but will find a solution that is close to the optimal solution. In my web application, I explore the performance of two different algorithms named &lt;strong&gt;first fit&lt;/strong&gt; and &lt;strong&gt;first fit descending&lt;/strong&gt; through a simple game.&lt;/p&gt;
+
+&lt;p&gt;The purpose is to show how well approximation algorithms–which do not find the exact solution–perform in practice. I was surprised by how difficult it is for to beat the computer’s “dumb” approach to solving the problem (described below).&lt;/p&gt;
 
 &lt;h3 id=&quot;first-fit&quot;&gt;First Fit&lt;/h3&gt;
 
@@ -70,17 +91,13 @@
 
 &lt;p&gt;In this simple game, the player is a worker in a factory that is presumably in the business of packing boxes. Blue squares representing items of various sizes are generated to the left, with each square containing a number that indicates the weight of each box. The player’s objective is to pack these items into each bin using the least amount of bins. The computer will run first fit and first fit descending described above to solve the problems. The player’s aim is to solve the problem using less bins than the computer.&lt;/p&gt;
 
-&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
-
-&lt;p&gt;The purpose is to show that the approximation algorithms which do not find the exact solution perform quite well in practice. The player may have difficulty beating the computer’s “dumb” approach to solving the problem. It is possible that the computer sometimes finds the optimal solution, in which case there is no way for the player to beat the computer.&lt;/p&gt;
-
-&lt;p&gt;To make the task of beating the computer simpler, the computer will take the worse solution out of first fit and first fit descending. The reason is that although first fit descending seems to be a better algorithm, it sometimes finds a worse solution than first fit in practice. This is also to make it less likely that the computer finds the optimal solution, in which case the user cannot do better.&lt;/p&gt;
+&lt;p&gt;To make the task of beating the computer simpler, the computer will take the worst solution between the ones given by first fit and first fit descending. The reason is that although first fit descending seems to be a better algorithm, it sometimes finds a worse solution than first fit in practice. This is also to make it less likely that the computer finds the optimal solution, in which case the user cannot do better.&lt;/p&gt;
 
 &lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
 
 &lt;p&gt;The web application was coded mainly in Javascript. I used the libraries &lt;a href=&quot;https://jqueryui.com/&quot;&gt;jQuery UI&lt;/a&gt; for the drag/drop functionality and &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React.js&lt;/a&gt; for updating the user interface.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 03 Apr 2016 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 15 Feb 2016 00:00:00 -0500</pubDate>
         <link>http://femmebot.github.io/Bin-Packing/</link>
         <guid isPermaLink="true">http://femmebot.github.io/Bin-Packing/</guid>
       </item>
@@ -89,7 +106,7 @@
         <title>Transposer</title>
         <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;Singers often have to change the key of their song so that they can hit all the notes. As someone who sometimes gives singing a try, I couldn’t find a chord transposer that could do it properly back when I wrote this program. The chord transposers available would often give the wrong form of a chord. For example, it would give the chord &lt;strong&gt;Bb&lt;/strong&gt; as &lt;strong&gt;A#&lt;/strong&gt;. They are the same chord&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but by convention, the correct name for the chord is usually &lt;strong&gt;Bb&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Singers often have to change the key of their song so that the notes are within their vocal range. As someone who sometimes gives singing a try, I found myself going through the painstaking process of transposing chords by hand. To save myself some time, I wrote this program to transpose chords automatically for me. I did find some chord transposers online at the time, but I wasn’t satisfied with their performance. For example, they would often give the wrong form of a chord. For example, the chord &lt;strong&gt;Bb&lt;/strong&gt; would be given as &lt;strong&gt;A#&lt;/strong&gt;. They are the same chord&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but &lt;strong&gt;A#&lt;/strong&gt; is almost never seen and would be incorrect in most key signatures.&lt;/p&gt;
 
 &lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 
@@ -107,11 +124,11 @@
 
 &lt;p&gt;The transposer understands which chords are valid in the target key signature and will only output those chords. For example, if we are transposing to &lt;strong&gt;Bb&lt;/strong&gt; major, the chord transposer will not output &lt;strong&gt;A#&lt;/strong&gt; or &lt;strong&gt;E#&lt;/strong&gt;, as these are not valid chords in &lt;strong&gt;Bb&lt;/strong&gt; major.&lt;/p&gt;
 
-&lt;h3 id=&quot;technology&quot;&gt;Technology&lt;/h3&gt;
+&lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
 
 &lt;p&gt;The transposer library is written in Javascript and uses HTML/CSS for the user interface. To recognize chords, it uses the &lt;a href=&quot;http://xregexp.com/&quot;&gt;XRegExp&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_expression&quot;&gt;regular expression&lt;/a&gt; javascript library.&lt;/p&gt;
 
-&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
@@ -121,7 +138,7 @@
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Sat, 02 Apr 2016 00:00:00 -0400</pubDate>
+        <pubDate>Wed, 24 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://femmebot.github.io/Transposer/</link>
         <guid isPermaLink="true">http://femmebot.github.io/Transposer/</guid>
       </item>
@@ -138,18 +155,18 @@
 
 &lt;/caption&gt;
 
-&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/portfolio/images/FloodItBoard.gif&quot; alt=&quot;Image of a Flood It board&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/images/FloodItBoard.gif&quot; alt=&quot;Image of a Flood It board&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 &lt;p&gt;Solving a game of Flood It belongs to the set of &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard&lt;/a&gt; problems meaning it is very difficult to find an exact solution.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; One simple algorithm to find an approximate solution is to choose the colour that will flood the largest area at each step. This algorithm is known as a &lt;a href=&quot;https://en.wikipedia.org/wiki/Greedy_algorithm&quot;&gt;greedy algorithm&lt;/a&gt; since it takes the locally optimal–but not necessarily globally optimal–action at each step.&lt;/p&gt;
 
-&lt;h2 id=&quot;game&quot;&gt;Game&lt;/h2&gt;
-
-&lt;p&gt;In the game, the computer solves the puzzle by employing the greedy algorithm mentioned above. The objective of the user is to try to beat the solution using fewer turns than the computer. The number of turns that the user used compared to the computer is displayed at the top as x/y where x and y are the number of turns used by the player and computer, respectively. The user can also ask the computer to solve the puzzle step-by-step using greedy algorithm by clicking the “Solve For Me” button.&lt;/p&gt;
-
 &lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
 
-&lt;p&gt;The purpose of this game–other than having fun, of course–is to explore how the greedy algorithm performs in practice since it is not easy to analyze the performance of the greedy solution. In my experience, it is pretty difficult to find a solution better than the optimal one produced by the computer. This might suggest that the greedy algorithm performs quite well on randomly generated puzzles.&lt;/p&gt;
+&lt;p&gt;The purpose of this game–other than having fun, of course–is to explore how the greedy algorithm performs in practice since it is not easy to analyze its performance. In my experience, it is pretty difficult to find a solution better than the optimal one produced by the computer. This might suggest that the greedy algorithm performs quite well on randomly generated puzzles.&lt;/p&gt;
+
+&lt;h2 id=&quot;game&quot;&gt;Game&lt;/h2&gt;
+
+&lt;p&gt;In the game, the computer solves the puzzle by employing the greedy algorithm mentioned above. The objective of the user is to try to beat the solution using fewer turns than the computer. The number of turns that the user used compared to the computer is displayed at the top as X/Y where X and Y are the number of turns used by the player and computer, respectively. The user can also ask the computer to solve the puzzle step-by-step using greedy algorithm by clicking the “Solve For Me” button.&lt;/p&gt;
 
 &lt;h2 id=&quot;algorithms&quot;&gt;Algorithms&lt;/h2&gt;
 
@@ -159,7 +176,7 @@
 
 &lt;h4 id=&quot;greedy&quot;&gt;Greedy&lt;/h4&gt;
 
-&lt;p&gt;Unlike the simple cycling algorithm, there is no limit to how badly the greedy algorithm performs. The greedy algorithm mentioned above to solve Flood It is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this may give us something far from the best solution. Consider the following puzzle:&lt;/p&gt;
+&lt;p&gt;Unlike the simple cycling algorithm, there is no limit to how many turns the greedy algorithm uses compared to the optimum. The greedy algorithm is the following: at each turn, we choose the colour that gives us the most “territory”. Although intuitively this seems like a good strategy, this may give us something far from the best solution. Consider the following puzzle:&lt;/p&gt;
 
 &lt;table class=&quot;image centered&quot;&gt;
 
@@ -172,7 +189,7 @@
 
 &lt;p&gt;The optimal solution takes three turns, which is the best we can possibly get. The solution is to flood the board in the following sequence: blue, red, then orange. Notice that the greedy algorithm will choose red first as it increases our territory the most. Then, it will choose orange then red then orange and so on. It will choose blue last. This is much worse than the optimal solution.&lt;/p&gt;
 
-&lt;p&gt;We are interested to see if it’s easy for a user to beat a solution produced by the greedy algorithm. Although in some cases it performs poorly, it might be that on average, it gives a good solution.&lt;/p&gt;
+&lt;p&gt;We are interested to see if it’s easy for a user to beat a solution produced by the greedy algorithm even though it has been shown that it performs badly in some cases. Try it yourself!&lt;/p&gt;
 
 &lt;h2 id=&quot;technology&quot;&gt;Technology&lt;/h2&gt;
 
@@ -191,7 +208,7 @@
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 01 Apr 2016 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Jun 2013 00:00:00 -0400</pubDate>
         <link>http://femmebot.github.io/Flood-It/</link>
         <guid isPermaLink="true">http://femmebot.github.io/Flood-It/</guid>
       </item>

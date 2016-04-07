@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Contact
-permalink: /contact/
+title: Skills
+permalink: /skills/
 ---
 
 You can contact me at ddycai (at) gmail (dot) com.

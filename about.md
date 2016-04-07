@@ -11,7 +11,7 @@ Hello, my name is Duncan. I am undergraduate student at [Western University](htt
 
 Don't even get me started on using clever algorithms to analyze data!
 
-My preferred "medium" is the web, as you have probably noticed from the projects presented in my portfolio. That being said, I wouldn't call myself a web developer as I only have experience creating the small Javascipt application you see here. I don't have any experience creating full-fledged sites. Nevertheless, Javascript is one of my favourite languages, and I love web technologies.
+My preferred "medium" is the web, as you have probably noticed from the projects presented in my portfolio. That being said, I wouldn't call myself a web developer as I only have experience creating the small Javascipt application you see here, not full-fledged sites. Nevertheless, Javascript is one of my favourite languages, and I love web technologies.
 
 ## Contact
 
